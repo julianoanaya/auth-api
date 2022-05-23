@@ -1,0 +1,31 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTMzNjg3MDB9.CpOzzxFyOZxohNI0_9ZvZrffDN2Clu08lEXZOBLifrw
+
+
+
+
+### Users create (signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "Test name",
+  "email": "test1@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
+
+###
+GET http://localhost:3000/users.json
+Authorization: Bearer {{jwt}}
+
